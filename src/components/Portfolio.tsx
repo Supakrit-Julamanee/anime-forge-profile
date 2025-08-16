@@ -12,8 +12,16 @@ import {
   Download,
   Server,
   Smartphone,
-  Database
+  Database,
+  User,
+  Heart,
+  Coffee,
+  Globe,
+  MapPin,
+  Phone,
+  Send
 } from 'lucide-react';
+import developerPortrait from '@/assets/developer-portrait.jpg';
 
 const Portfolio = () => {
   const [activeProject, setActiveProject] = useState(0);
@@ -142,6 +150,146 @@ const Portfolio = () => {
             delay: 1
           }}
         />
+      </motion.section>
+
+      {/* About Me - The Origin Story */}
+      <motion.section 
+        className="py-20 px-4 bg-gradient-to-b from-accent/5 to-background"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-6xl mx-auto">
+          <motion.h2 
+            className="font-bangers text-4xl md:text-6xl text-center mb-16"
+            initial={{ y: -50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            THE <span className="text-primary">ORIGIN</span> STORY
+          </motion.h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Portrait */}
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative">
+                <motion.div
+                  className="absolute inset-0 bg-gradient-fire rounded-2xl opacity-20 blur-xl"
+                  animate={{ 
+                    scale: [1, 1.05, 1],
+                    opacity: [0.2, 0.3, 0.2]
+                  }}
+                  transition={{ 
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+                <motion.img
+                  src={developerPortrait}
+                  alt="Full Stack Warrior - Professional Developer Portrait"
+                  className="relative z-10 w-full max-w-md mx-auto rounded-2xl shadow-intense"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                />
+                
+                {/* Battle Aura Effect */}
+                <motion.div
+                  className="absolute -inset-4 bg-primary/10 rounded-3xl"
+                  animate={{ 
+                    rotate: [0, 360],
+                    scale: [1, 1.1, 1]
+                  }}
+                  transition={{ 
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                />
+              </div>
+            </motion.div>
+
+            {/* Story Content */}
+            <motion.div
+              className="space-y-6"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <motion.div
+                className="power-card"
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <User className="w-6 h-6 text-primary" />
+                  <h3 className="font-bangers text-2xl">THE WARRIOR</h3>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  I'm a passionate full-stack developer with <span className="text-secondary font-bold">5+ years</span> of battle-tested experience. 
+                  My journey began with a simple HTML page and evolved into architecting complex web applications 
+                  that serve <span className="text-primary font-bold">millions of users</span>.
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="power-card"
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <Heart className="w-6 h-6 text-primary" />
+                  <h3 className="font-bangers text-2xl">THE PASSION</h3>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  I live and breathe code! Whether it's crafting pixel-perfect UIs with <span className="lightning-text">React</span> or 
+                  building robust APIs with <span className="lightning-text">Node.js</span>, I approach every project like a boss battle - 
+                  with strategy, determination, and an unbreakable will to succeed.
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="power-card"
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <Coffee className="w-6 h-6 text-primary" />
+                  <h3 className="font-bangers text-2xl">THE FUEL</h3>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  When I'm not coding, you'll find me studying the latest tech trends, contributing to open source, 
+                  or binge-watching anime for inspiration. My code is powered by caffeine, driven by curiosity, 
+                  and fueled by the desire to create <span className="text-accent font-bold">legendary digital experiences</span>.
+                </p>
+              </motion.div>
+
+              {/* Battle Stats */}
+              <motion.div
+                className="grid grid-cols-2 gap-4"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="text-center p-4 bg-primary/10 rounded-lg">
+                  <div className="lightning-text font-bangers text-2xl">50+</div>
+                  <div className="text-sm text-muted-foreground">Projects Conquered</div>
+                </div>
+                <div className="text-center p-4 bg-secondary/10 rounded-lg">
+                  <div className="lightning-text font-bangers text-2xl">∞</div>
+                  <div className="text-sm text-muted-foreground">Cups of Coffee</div>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
       </motion.section>
 
       {/* Skills Power Grid */}
@@ -281,72 +429,185 @@ const Portfolio = () => {
         </div>
       </motion.section>
 
-      {/* Call to Battle */}
+      {/* Enhanced Contact Section */}
       <motion.section 
-        className="py-20 px-4"
+        className="py-20 px-4 bg-gradient-to-b from-background to-primary/5"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto">
           <motion.h2 
-            className="font-bangers text-4xl md:text-6xl mb-8"
+            className="font-bangers text-4xl md:text-6xl text-center mb-16"
             initial={{ scale: 0.5, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            READY FOR <span className="hero-title">BATTLE?</span>
+            JOIN THE <span className="hero-title">BATTLE</span>
           </motion.h2>
 
-          <motion.p
-            className="text-xl text-muted-foreground mb-12"
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            Let's forge the next legendary web application together. 
-            Your vision + my code = Digital domination!
-          </motion.p>
-
-          <motion.div
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <motion.a
-              href="mailto:dev@example.com"
-              className="energy-button group"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <motion.div
+              className="power-card"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
-              <Mail className="inline-block mr-3 w-5 h-5" />
-              START MISSION
-            </motion.a>
+              <h3 className="font-bangers text-2xl mb-6 flex items-center gap-3">
+                <Send className="w-6 h-6 text-primary" />
+                SEND MESSAGE
+              </h3>
+              
+              <div className="space-y-6">
+                <div>
+                  <label className="block text-sm font-bold mb-2">Battle Name</label>
+                  <input 
+                    type="text" 
+                    placeholder="Your awesome name"
+                    className="w-full p-4 bg-input border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-bold mb-2">Communication Portal</label>
+                  <input 
+                    type="email" 
+                    placeholder="your.email@domain.com"
+                    className="w-full p-4 bg-input border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-bold mb-2">Mission Brief</label>
+                  <textarea 
+                    rows={5}
+                    placeholder="Tell me about your legendary project idea..."
+                    className="w-full p-4 bg-input border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
+                  />
+                </div>
+                
+                <motion.button
+                  className="energy-button w-full"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Rocket className="inline-block mr-3 w-5 h-5" />
+                  DEPLOY MESSAGE
+                </motion.button>
+              </div>
+            </motion.div>
 
-            <div className="flex gap-4">
-              <motion.a
-                href="#"
-                className="p-4 bg-muted hover:bg-primary hover:text-primary-foreground transition-colors rounded-lg"
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.9 }}
+            {/* Contact Info */}
+            <motion.div
+              className="space-y-6"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="power-card">
+                <h3 className="font-bangers text-2xl mb-6">CONTACT COORDINATES</h3>
+                
+                <div className="space-y-6">
+                  <motion.div 
+                    className="flex items-center gap-4 p-4 bg-muted/50 rounded-lg hover:bg-primary/10 transition-colors cursor-pointer"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <div className="p-3 bg-primary/20 rounded-lg">
+                      <Mail className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <div className="font-bold">Email Portal</div>
+                      <div className="text-muted-foreground">dev.warrior@example.com</div>
+                    </div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="flex items-center gap-4 p-4 bg-muted/50 rounded-lg hover:bg-primary/10 transition-colors cursor-pointer"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <div className="p-3 bg-secondary/20 rounded-lg">
+                      <Phone className="w-6 h-6 text-secondary" />
+                    </div>
+                    <div>
+                      <div className="font-bold">Battle Hotline</div>
+                      <div className="text-muted-foreground">+1 (555) WARRIOR</div>
+                    </div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="flex items-center gap-4 p-4 bg-muted/50 rounded-lg hover:bg-primary/10 transition-colors cursor-pointer"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <div className="p-3 bg-accent/20 rounded-lg">
+                      <MapPin className="w-6 h-6 text-accent" />
+                    </div>
+                    <div>
+                      <div className="font-bold">Base Location</div>
+                      <div className="text-muted-foreground">Silicon Valley, CA</div>
+                    </div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="flex items-center gap-4 p-4 bg-muted/50 rounded-lg hover:bg-primary/10 transition-colors cursor-pointer"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <div className="p-3 bg-primary/20 rounded-lg">
+                      <Globe className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <div className="font-bold">Digital Presence</div>
+                      <div className="text-muted-foreground">Available 24/7</div>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+
+              {/* Social Battle Network */}
+              <div className="power-card">
+                <h3 className="font-bangers text-xl mb-4">BATTLE NETWORK</h3>
+                <div className="flex gap-4">
+                  <motion.a
+                    href="#"
+                    className="flex-1 p-4 bg-muted hover:bg-primary hover:text-primary-foreground transition-colors rounded-lg text-center"
+                    whileHover={{ scale: 1.05, rotate: 2 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Github className="w-6 h-6 mx-auto mb-2" />
+                    <div className="text-sm font-bold">GitHub</div>
+                  </motion.a>
+                  <motion.a
+                    href="#"
+                    className="flex-1 p-4 bg-muted hover:bg-secondary hover:text-secondary-foreground transition-colors rounded-lg text-center"
+                    whileHover={{ scale: 1.05, rotate: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Linkedin className="w-6 h-6 mx-auto mb-2" />
+                    <div className="text-sm font-bold">LinkedIn</div>
+                  </motion.a>
+                </div>
+              </div>
+
+              {/* Response Time */}
+              <motion.div
+                className="power-card border border-secondary/30"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                viewport={{ once: true }}
               >
-                <Github className="w-6 h-6" />
-              </motion.a>
-              <motion.a
-                href="#"
-                className="p-4 bg-muted hover:bg-secondary hover:text-secondary-foreground transition-colors rounded-lg"
-                whileHover={{ scale: 1.1, rotate: -5 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Linkedin className="w-6 h-6" />
-              </motion.a>
-            </div>
-          </motion.div>
+                <div className="text-center">
+                  <Zap className="w-8 h-8 text-secondary mx-auto mb-3" />
+                  <div className="lightning-text font-bangers text-xl">LIGHTNING RESPONSE</div>
+                  <div className="text-sm text-muted-foreground">Usually reply within 24 hours</div>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
       </motion.section>
 
