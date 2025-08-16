@@ -68,7 +68,7 @@ const Portfolio = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-accent/5" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-accent/10" />
         
         <div className="relative z-10 max-w-6xl mx-auto text-center">
           <motion.div
@@ -154,7 +154,7 @@ const Portfolio = () => {
 
       {/* About Me - The Origin Story */}
       <motion.section 
-        className="py-20 px-4 bg-gradient-to-b from-accent/5 to-background"
+        className="py-20 px-4 bg-gradient-to-b from-accent/10 to-background"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -356,7 +356,7 @@ const Portfolio = () => {
 
       {/* Battle Projects */}
       <motion.section 
-        className="py-20 px-4 bg-gradient-to-b from-background to-accent/5"
+        className="py-20 px-4 bg-gradient-to-b from-background to-secondary/10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -431,7 +431,7 @@ const Portfolio = () => {
 
       {/* Enhanced Contact Section */}
       <motion.section 
-        className="py-20 px-4 bg-gradient-to-b from-background to-primary/5"
+        className="py-20 px-4 bg-gradient-to-b from-background to-primary/10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}

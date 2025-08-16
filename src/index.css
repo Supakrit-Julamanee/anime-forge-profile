@@ -8,52 +8,52 @@
 
 @layer base {
   :root {
-    /* Anime Fighter Color Palette */
-    --background: 220 45% 8%;          /* Dark navy base */
-    --foreground: 0 0% 98%;            /* Clean white */
+    /* Anime Fighter Light Theme - Bold, Energetic, Heroic */
+    --background: 0 0% 98%;             /* Clean white base */
+    --foreground: 220 45% 8%;           /* Dark navy text */
 
-    --card: 220 40% 12%;               /* Slightly lighter navy */
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;                  /* Pure white cards */
+    --card-foreground: 220 45% 8%;
 
-    --popover: 220 40% 12%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 45% 8%;
 
-    --primary: 351 92% 50%;            /* Deep red (#d90429) */
+    --primary: 351 92% 50%;             /* Deep red (#d90429) */
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 45 96% 53%;           /* Fiery gold (#fca311) */
+    --secondary: 45 96% 53%;            /* Fiery gold (#fca311) */
     --secondary-foreground: 220 45% 8%;
 
-    --accent: 146 59% 20%;             /* Dark green (#1b4332) */
+    --accent: 146 59% 20%;              /* Dark green (#1b4332) */
     --accent-foreground: 0 0% 98%;
 
-    --muted: 220 25% 25%;
-    --muted-foreground: 220 10% 65%;
+    --muted: 220 15% 92%;               /* Light gray */
+    --muted-foreground: 220 25% 35%;
 
-    --destructive: 351 92% 50%;        /* Same as primary for consistency */
+    --destructive: 351 92% 50%;         /* Same as primary */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 30% 20%;
-    --input: 220 30% 15%;
+    --border: 220 20% 85%;              /* Light borders */
+    --input: 0 0% 96%;                  /* Light input background */
     --ring: 351 92% 50%;
 
     --radius: 0.75rem;
 
-    /* Anime Energy Gradients */
+    /* Anime Energy Gradients - Light Theme */
     --gradient-fire: linear-gradient(135deg, hsl(351 92% 50%), hsl(45 96% 53%));
     --gradient-power: linear-gradient(135deg, hsl(351 92% 50%), hsl(351 92% 35%));
     --gradient-lightning: linear-gradient(45deg, hsl(45 96% 53%), hsl(45 96% 65%));
-    --gradient-shadow: linear-gradient(180deg, hsl(220 45% 8% / 0.8), hsl(220 45% 8%));
+    --gradient-shadow: linear-gradient(180deg, hsl(0 0% 98% / 0.9), hsl(0 0% 95%));
 
-    /* Battle Effects */
-    --glow-red: 0 0 30px hsl(351 92% 50% / 0.5);
-    --glow-gold: 0 0 30px hsl(45 96% 53% / 0.5);
-    --glow-green: 0 0 30px hsl(146 59% 20% / 0.5);
+    /* Battle Effects - Light Theme */
+    --glow-red: 0 0 30px hsl(351 92% 50% / 0.3);
+    --glow-gold: 0 0 30px hsl(45 96% 53% / 0.3);
+    --glow-green: 0 0 30px hsl(146 59% 20% / 0.3);
 
-    /* Combat Shadows */
-    --shadow-intense: 0 10px 40px -10px hsl(351 92% 50% / 0.4);
-    --shadow-power: 0 5px 20px hsl(351 92% 50% / 0.3);
-    --shadow-energy: 0 0 50px hsl(45 96% 53% / 0.2);
+    /* Combat Shadows - Light Theme */
+    --shadow-intense: 0 10px 40px -10px hsl(351 92% 50% / 0.2);
+    --shadow-power: 0 5px 20px hsl(351 92% 50% / 0.15);
+    --shadow-energy: 0 0 50px hsl(45 96% 53% / 0.1);
 
   }
 }
@@ -107,19 +107,19 @@
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Power Cards */
+  /* Power Cards - Light Theme */
   .power-card {
     @apply relative bg-card border border-border rounded-xl p-6 transition-all duration-300;
-    background: linear-gradient(135deg, hsl(220 40% 12%), hsl(220 30% 8%));
-    box-shadow: 0 4px 20px hsl(220 45% 8% / 0.5);
+    background: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 15% 97%));
+    box-shadow: 0 4px 20px hsl(220 20% 85% / 0.4);
   }
 
   .power-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-power), 0 10px 40px hsl(220 45% 8% / 0.3);
+    box-shadow: var(--shadow-power), 0 10px 40px hsl(220 20% 85% / 0.6);
   }
 
-  /* Combat Animations */
+  /* Combat Animations - Light Theme */
   .battle-glow {
     position: relative;
   }
@@ -127,7 +127,7 @@
   .battle-glow::after {
     content: '';
     @apply absolute inset-0 rounded-lg opacity-0 transition-opacity duration-500;
-    background: radial-gradient(circle at center, hsl(351 92% 50% / 0.2), transparent);
+    background: radial-gradient(circle at center, hsl(351 92% 50% / 0.1), transparent);
     animation: pulse-energy 2s ease-in-out infinite;
   }
 
@@ -141,10 +141,10 @@
     text-shadow: 0 0 10px hsl(45 96% 53% / 0.8);
   }
 
-  /* Energy Bars */
+  /* Energy Bars - Light Theme */
   .energy-bar {
     @apply h-1 rounded-full overflow-hidden;
-    background: hsl(220 30% 20%);
+    background: hsl(220 20% 85%);
   }
 
   .energy-fill {
