@@ -51,17 +51,25 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
-				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			fontFamily: {
+				'bangers': ['Bangers', 'cursive'],
+				'inter': ['Inter', 'sans-serif'],
+			},
+			backgroundImage: {
+				'gradient-fire': 'var(--gradient-fire)',
+				'gradient-power': 'var(--gradient-power)',
+				'gradient-lightning': 'var(--gradient-lightning)',
+				'gradient-shadow': 'var(--gradient-shadow)',
+			},
+			boxShadow: {
+				'glow-red': 'var(--glow-red)',
+				'glow-gold': 'var(--glow-gold)',
+				'glow-green': 'var(--glow-green)',
+				'intense': 'var(--shadow-intense)',
+				'power': 'var(--shadow-power)',
+				'energy': 'var(--shadow-energy)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

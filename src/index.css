@@ -1,96 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Anime Fighter Design System - Bold, Energetic, Heroic */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Anime Fighter Color Palette */
+    --background: 220 45% 8%;          /* Dark navy base */
+    --foreground: 0 0% 98%;            /* Clean white */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 40% 12%;               /* Slightly lighter navy */
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 40% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 351 92% 50%;            /* Deep red (#d90429) */
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 45 96% 53%;           /* Fiery gold (#fca311) */
+    --secondary-foreground: 220 45% 8%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 146 59% 20%;             /* Dark green (#1b4332) */
+    --accent-foreground: 0 0% 98%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 220 25% 25%;
+    --muted-foreground: 220 10% 65%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 351 92% 50%;        /* Same as primary for consistency */
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 30% 20%;
+    --input: 220 30% 15%;
+    --ring: 351 92% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Anime Energy Gradients */
+    --gradient-fire: linear-gradient(135deg, hsl(351 92% 50%), hsl(45 96% 53%));
+    --gradient-power: linear-gradient(135deg, hsl(351 92% 50%), hsl(351 92% 35%));
+    --gradient-lightning: linear-gradient(45deg, hsl(45 96% 53%), hsl(45 96% 65%));
+    --gradient-shadow: linear-gradient(180deg, hsl(220 45% 8% / 0.8), hsl(220 45% 8%));
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Battle Effects */
+    --glow-red: 0 0 30px hsl(351 92% 50% / 0.5);
+    --glow-gold: 0 0 30px hsl(45 96% 53% / 0.5);
+    --glow-green: 0 0 30px hsl(146 59% 20% / 0.5);
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Combat Shadows */
+    --shadow-intense: 0 10px 40px -10px hsl(351 92% 50% / 0.4);
+    --shadow-power: 0 5px 20px hsl(351 92% 50% / 0.3);
+    --shadow-energy: 0 0 50px hsl(45 96% 53% / 0.2);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -100,6 +64,143 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer components {
+  /* Hero Elements */
+  .hero-title {
+    @apply text-transparent bg-clip-text;
+    background-image: var(--gradient-fire);
+    text-shadow: 0 0 30px hsl(351 92% 50% / 0.5);
+  }
+
+  .energy-button {
+    @apply relative overflow-hidden bg-primary text-primary-foreground font-bold py-4 px-8 rounded-lg;
+    background: var(--gradient-power);
+    box-shadow: var(--shadow-intense);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .energy-button:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: var(--glow-red), var(--shadow-intense);
+  }
+
+  .energy-button::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(45deg, transparent, hsl(45 96% 53% / 0.3), transparent);
+    transform: translateX(-100%);
+  }
+
+  .energy-button:hover::before {
+    @apply opacity-100;
+    transform: translateX(100%);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Power Cards */
+  .power-card {
+    @apply relative bg-card border border-border rounded-xl p-6 transition-all duration-300;
+    background: linear-gradient(135deg, hsl(220 40% 12%), hsl(220 30% 8%));
+    box-shadow: 0 4px 20px hsl(220 45% 8% / 0.5);
+  }
+
+  .power-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-power), 0 10px 40px hsl(220 45% 8% / 0.3);
+  }
+
+  /* Combat Animations */
+  .battle-glow {
+    position: relative;
+  }
+
+  .battle-glow::after {
+    content: '';
+    @apply absolute inset-0 rounded-lg opacity-0 transition-opacity duration-500;
+    background: radial-gradient(circle at center, hsl(351 92% 50% / 0.2), transparent);
+    animation: pulse-energy 2s ease-in-out infinite;
+  }
+
+  .battle-glow:hover::after {
+    @apply opacity-100;
+  }
+
+  /* Lightning Effects */
+  .lightning-text {
+    @apply text-secondary font-bold;
+    text-shadow: 0 0 10px hsl(45 96% 53% / 0.8);
+  }
+
+  /* Energy Bars */
+  .energy-bar {
+    @apply h-1 rounded-full overflow-hidden;
+    background: hsl(220 30% 20%);
+  }
+
+  .energy-fill {
+    @apply h-full transition-all duration-1000 ease-out;
+    background: var(--gradient-lightning);
+    box-shadow: var(--glow-gold);
+  }
+}
+
+@layer utilities {
+  /* Combat Keyframes */
+  @keyframes pulse-energy {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+  }
+
+  @keyframes battle-slide {
+    0% { transform: translateX(-100%) rotate(-5deg); }
+    100% { transform: translateX(0) rotate(0deg); }
+  }
+
+  @keyframes power-up {
+    0% { transform: scale(0.8) rotate(-10deg); opacity: 0; }
+    50% { transform: scale(1.1) rotate(5deg); }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  }
+
+  @keyframes energy-burst {
+    0% { transform: scale(1); box-shadow: var(--shadow-power); }
+    50% { transform: scale(1.05); box-shadow: var(--glow-red), var(--shadow-intense); }
+    100% { transform: scale(1); box-shadow: var(--shadow-power); }
+  }
+
+  /* Animation Classes */
+  .animate-battle-slide {
+    animation: battle-slide 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-power-up {
+    animation: power-up 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .animate-energy-burst {
+    animation: energy-burst 0.3s ease-in-out;
+  }
+
+  .animate-pulse-energy {
+    animation: pulse-energy 2s ease-in-out infinite;
+  }
+
+  /* Typography */
+  .font-bangers {
+    font-family: 'Bangers', cursive;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
   }
 }
